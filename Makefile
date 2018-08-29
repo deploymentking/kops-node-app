@@ -12,7 +12,8 @@ build:
 	@docker tag ${IMG} ${VERSION}
 
 push:
-	@docker push ${NAME}
+	@docker push ${VERSION}
+	@docker push ${LATEST}
 
 login:
 	@docker log -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
