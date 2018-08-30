@@ -11,7 +11,7 @@ router.get('/healthcheck', function (req, res) {
 
 /* GET readiness page. */
 router.get('/readiness', function (req, res) {
-  sleep.sleep(15);
+  sleep.sleep(1);
   res.render('readiness', {title: 'Readiness Probe Page'});
 });
 
