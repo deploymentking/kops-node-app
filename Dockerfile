@@ -7,7 +7,9 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY package.json package.json
-RUN npm install
+RUN apk add --no-cache --virtual .build-deps alpine-sdk python \
+ && npm install --production --silent \
+ && apk del .build-deps
 
 COPY . .
 

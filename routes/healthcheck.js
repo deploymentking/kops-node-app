@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 var version = fs.readFileSync('.version', 'utf8');
 
-/* GET home page. */
+/* GET healthcheck page. */
 router.get('/', function(req, res, next) {
   res.render('healthcheck', { title: 'Health Check Page', version: version });
 });
